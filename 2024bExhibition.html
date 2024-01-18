@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
@@ -205,396 +205,482 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
+@include-when-export url(https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext);
+
 :root {
-    --side-bar-bg-color: #fafafa;
-    --control-text-color: #777;
+	--control-text-color: #777;
 }
 
-@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
 
-/* open-sans-regular - latin-ext_latin */
-  /* open-sans-italic - latin-ext_latin */
-    /* open-sans-700 - latin-ext_latin */
-    /* open-sans-700italic - latin-ext_latin */
-  html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+h1,
+.h1,
+.f1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
 }
+h2,
+.h2,
+.f2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
 
 body {
-    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.6;
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", 'Segoe UI Emoji', Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
 }
 
 #write {
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 30px;
-    padding-bottom: 100px;
+	max-width: 914px;
+	color: #333;
 }
 
 @media only screen and (min-width: 1400px) {
 	#write {
-		max-width: 1024px;
+		max-width: 1100px;
 	}
 }
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1700px) {
 	#write {
 		max-width: 1200px;
 	}
 }
 
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.5rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
-a {
-    color: #4183C4;
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a;
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: .85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
 }
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
 }
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    text-decoration: none;
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
 }
-h1 tt,
-h1 code {
-    font-size: inherit;
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
 }
-h2 tt,
-h2 code {
-    font-size: inherit;
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
 }
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
-h1 {
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
-}
-
-/*@media print {
-    .typora-export h1,
-    .typora-export h2 {
-        border-bottom: none;
-        padding-bottom: initial;
-    }
-
-    .typora-export h1::after,
-    .typora-export h2::after {
-        content: "";
-        display: block;
-        height: 100px;
-        margin-top: -96px;
-        border-top: 1px solid #eee;
-    }
-}*/
-
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
+a {
+	color: #463F5C;
+	text-decoration: underline;
 }
 
-li p.first {
-    display: inline-block;
-}
-ul,
-ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
-}
-blockquote {
-    border-left: 4px solid #dfe2e5;
-    padding: 0 15px;
-    color: #777777;
-}
-blockquote blockquote {
-    padding-right: 0;
-}
-table {
-    padding: 0;
-    word-break: initial;
-}
-table tr {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-    background-color: #f8f8f8;
-}
-table th {
-    font-weight: bold;
-    border: 1px solid #dfe2e5;
-    border-bottom: 0;
-    margin: 0;
-    padding: 6px 13px;
-}
-table td {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 6px 13px;
-}
-table th:first-child,
-table td:first-child {
-    margin-top: 0;
-}
-table th:last-child,
-table td:last-child {
-    margin-bottom: 0;
+#write {
+	padding-top: 2rem;
 }
 
-.CodeMirror-lines {
-    padding-left: 4px;
-}
-
-.code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
-}
-
-.md-fences,
-code,
-tt {
-    border: 1px solid #e7eaed;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-code {
-    background-color: #f3f4f4;
-    padding: 0 2px 0 2px;
-}
-
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
-
-
-.md-task-list-item > input {
-  margin-left: -1.3em;
-}
-
-@media print {
-    html {
-        font-size: 13px;
-    }
-    pre {
-        page-break-inside: avoid;
-        word-wrap: break-word;
-    }
-}
-
-.md-fences {
-	background-color: #f8f8f8;
-}
 #write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
-}
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
 
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
-}
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
 
-.md-mathjax-midline {
-    background: #fafafa;
-}
-
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
-}
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
 }
 .md-image>.md-meta {
-    /*border: 1px solid #ddd;*/
-    border-radius: 3px;
-    padding: 2px 0px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -0.2rem;
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 7px);
+	border: none;
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 200ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
 }
 
 .md-tag {
-    color: #a7a7a7;
-    opacity: 1;
+	color:inherit;
 }
 
-.md-toc { 
-    margin-top:20px;
-    padding-bottom:20px;
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
 }
 
-.sidebar-tabs {
-    border-bottom: none;
+#typora-sidebar {
+	font-size:1rem !important;
 }
 
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
+.html-for-mac #typora-sidebar {
+	background-color:white;
 }
 
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
+.outline-content li, .outline-content ul {
+	font-size:1rem !important;
 }
 
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
 }
 
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
+.outline-expander {
+	width: 18px;
 }
 
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state{
-    visibility: visible;
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  font-size: 1.5rem;
+ 	top: -0.1rem;
 }
 
-.mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
-    background-color: var(--side-bar-bg-color);
+.outline-expander:hover:before {
+	content: "+";
 }
 
-.md-lang {
-    color: #b4654d;
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
 }
 
-/*.html-for-mac {
-    --item-hover-bg-color: #E6F0FE;
-}*/
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
 
-#md-notification .btn {
-    border: 0;
+.os-windows #typora-source {
+	font-family: inherit;
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -3.4em;
 }
 
 .dropdown-menu .divider {
-    border-color: #e5e5e5;
-    opacity: 0.4;
+	border-color: #e5e5e5;
 }
 
-.ty-preferences .window-content {
-    background-color: #fafafa;
+li {
+	margin: 0.5rem 0;
 }
 
-.ty-preferences .nav-group-item.active {
-    color: white;
-    background: #999;
+li > *:last-child {
+	margin-bottom: 0;
 }
-
-.menu-item-container a.menu-style-btn {
-    background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
-}
-
 
 
 </style><title>2024下半年东南亚及国内展会</title>
 </head>
 <body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
-<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2024上半年东南亚及国内展会">2024上半年东南亚及国内展会</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#国际展会">国际展会</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bex-asia">BEX Asia</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间">时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主办方">主办方</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#展览范围">展览范围</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#architecture--building">Architecture &amp; Building</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间-2">时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点-2">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主办方-2">主办方</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#展品范围">展品范围</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#国内展会">国内展会</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#surfaces-china"><strong>SURFACES China</strong></a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间-3">时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点-3">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主办方-3">主办方</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#展览范围-2">展览范围</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><p>&nbsp;</p><h1 id='2024上半年东南亚及国内展会'><a href='2024aExhibition.html'><span>2024上半年东南亚及国内展会</span></a></h1><h1 id='国际展会'><span>国际展会</span></h1><h2 id='bex-asia'><a href='https://www.bex-asia.com/'><span>BEX Asia</span></a><img src="https://scontent-sin6-4.xx.fbcdn.net/v/t39.30808-6/326565725_485642180407865_4455458326377137070_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=qFCof07KCa8AX9BoAq5&_nc_ht=scontent-sin6-4.xx&oh=00_AfAsWQtxfDjUAOmFeztL2o6xew6K-RYpwwvdFD2OChKp3w&oe=65AAF4EF" style="zoom: 33%;" /></h2><h3 id='时间'><span>时间</span></h3><p><span>2024年9月4日~2024年9月6日 09:00~18:00</span></p><h3 id='地点'><span>地点</span></h3><p><span>Marina Bay Sands, 10 Bayfront Ave, Singapore 018956</span></p><h3 id='主办方'><span>主办方</span></h3><p><span>Reed Exhibitions励展集团</span></p><h3 id='展览范围'><span>展览范围</span></h3><ol start='' ><li><p><strong><span>装饰装修区:</span></strong><span> 建筑五金、厨房卫浴、新型建材、建筑不锈钢、建筑金属材料、建筑陶瓷、建筑石材、建筑机械设备、室内装饰材料、木材、建筑胶凝制品、塑胶建材、粘合剂、纸质材料、天花板、</span><strong><span>木地板</span></strong><span>、砖瓦、门窗玻璃、天花板墙面装饰、隔间、厨房卫浴配件及相关材料</span></p></li><li><p><strong><span>建材料区:</span></strong><span> 屋顶、建筑结构、防水处理、能源环保技术、水处理技术、管件、泵阀、防水材料、维修设备及清洁用品、保安及防护设备、消防安防器材</span></p></li><li><p><strong><span>室内装潢及配件区:</span></strong><span> 室内设计、家具家饰等</span></p></li></ol><hr /><h2 id='architecture--building'><a href='https://architecturebuildingservices.com.sg/'><span>Architecture &amp; Building</span></a><img src="https://architecturebuildingservices.com.sg/wp-content/uploads/2022/02/ABS-2024_Logo_withtagline_clear.png" style="zoom: 18%;" /></h2><h3 id='时间-2'><span>时间</span></h3><p><span>2024年11月13日~11月15日 10:00~18:00(11月15日 17:00)</span></p><h3 id='地点-2'><span>地点</span></h3><p><span>Marina Bay Sands, 10 Bayfront Ave, Singapore 018956</span></p><h3 id='主办方-2'><span>主办方</span></h3><p><span>CEMS</span></p><h3 id='展品范围'><span>展品范围</span></h3><ol start='' ><li><p><strong><span>建材:</span></strong><span> 卫浴洁具、门窗及配件、门窗机电及门控系统、橱柜、厨卫设施、石材、钢材、铝材、不锈钢、塑料建材、复合材料、新型建材、防水建材、保温建材、建筑玻璃、地面铺装材料、地板、地毯、人造草坪、其它金属材料、五金配件、建筑工具、劳保用品、安全防护用具、蓬房、帐篷、篷布、阳光房、装饰材料、塑胶橡胶、墙纸布艺、家居软装。</span></p></li><li><p><strong><span>建筑材料及金属:</span></strong><span> 建筑五金、建筑工具、不锈钢材、彩钢板、建筑金属材料、建筑防水材料、仓储设备、铝塑板、铝型材、阳光板、板材、木材、建筑胶凝制品、粘合剂、门窗、五金、锁具、墙体材料、室内装饰材料、地板、砖瓦、建筑机械设备等；建筑陶瓷：各类瓷砖、瓷片、软瓷、马赛克、陶板、陶砖、陶瓷瓦、工业陶瓷、特种陶瓷。</span></p></li><li><p><strong><span>木材及木制品、复合板材:</span></strong><span> 木材、木制品、竹制品、人造板材、建筑木模板；</span><strong><span>实木地板</span></strong><span>、竹地板、</span><strong><span>复合地板</span></strong><span>、</span><strong><span>强化地板</span></strong><span>、防静电地板；复合木材、</span><strong><span>木塑材料</span></strong><span>、防火板、</span><strong><span>PVC复合材料</span></strong><span>、抗贝特板、亚克力板、树脂板、装饰纸。</span></p></li><li><p><strong><span>五金:</span></strong><span> 手动工具: 传统手工具、组合工具、汽保工具、园林工具、工具箱包、量具、刃具、刀具； 电动工具: 传统电动工具、气动工具、风动工具、液压工具、磨具磨料； 机械设备: 木工机械、园林机械、清洗机械、包装机械、金属加工机械、起重器材、喷涂设备； 焊接设备: 电焊设备与器材、气焊、气割设备、焊接辅机器具、焊接材料、配件 五金制品: 建筑五金、装饰五金、门窗五金、水暖五金、卫浴五金、标准紧固件、五金杂品 机电产品: 水泵、空压机、电动机、发电机、给排水设备、轴承</span></p></li></ol><hr /><h1 id='国内展会'><span>国内展会</span></h1><h2 id='surfaces-china'><a href='https://www.domotexasiachinafloor.com/'><strong><span>SURFACES China</span></strong></a><img src="https://www.surfaceschina.com/wp-content/uploads/2022/07/20220715-1-e1657848933543.png" style="zoom:100%;" /></h2><h3 id='时间-3'><span>时间</span></h3><p><span>2024年08月14日~08月16日 09:00~18:00</span></p><h3 id='地点-3'><span>地点</span></h3><p><span>中国-上海-浦东新区龙阳路2345号-上海新国际博览中心</span></p><h3 id='主办方-3'><span>主办方</span></h3><p><span>Informa Markets、中国五矿化工进出口商会</span></p><h3 id='展览范围-2'><span>展览范围</span></h3><ol start='' ><li><p><strong><span>瓷砖:</span></strong><span> 岩板，瓷砖、装饰瓷砖、地砖、玻璃瓷砖、陶瓷大板、大理石瓷砖、瓷砖封边型材、马赛克、陶瓷砖、石砖、陶瓦瓷砖、墙砖、操作台面、仿古砖等</span></p></li><li><p><strong><span>石材:</span></strong><span> 荒料、板岩、工程石、花岗岩、景观石、石灰石、大理石、石材封边型材、马赛克、天然石、玛瑙石、石英石、砂岩等</span></p></li><li><p><strong><span>磨石及人造石:</span></strong><span> 水泥基磨石、环氧磨石、玻璃磨石，人造石实体面材、人造石石英石、人造石岗石等</span></p></li><li><p><strong><span>地板成品及生产设备、技术:</span></strong><span> 实木地板、</span><strong><span>实木复合地板</span></strong><span>、</span><strong><span>强化木地板</span></strong><span>、重竹地板、竹复合地板、软木地板、地热地板、地板生产设备、生产配件、技术</span></p></li><li><p><strong><span>弹性地材:</span></strong><span> </span><strong><span>PVC地板</span></strong><span>、</span><strong><span>木塑地板</span></strong><span>、</span><strong><span>SPC地板</span></strong><span>、亚麻地板、橡胶地板、防静电地板、人造草坪等</span></p></li><li><p><strong><span>运动地材:</span></strong><span> 人造草、体育橡胶地材、体育PVC地板、体育木地板、橡胶跑道等</span></p></li><li><p><strong><span>集成墙面及墙面装饰材料:</span></strong><span> 墙纸、墙布、集成墙饰、集成墙面、背景墙、吸音板、涂料、墙漆、硅藻泥产品、龙骨、板材、木门、墙体材料</span></p></li><li><p><strong><span>顶墙及天花:</span></strong><span> 集成吊顶、全屋集成系统、天花（矿棉板、石膏板、木板、塑钢板、铝扣板）、吊顶材料等</span></p></li><li><p><strong><span>卫浴洁具及整体卫浴:</span></strong><span> 整体卫浴及解决方案、卫浴洁具、淋浴房等</span></p></li><li><p><strong><span>地毯:</span></strong><span> 手工地毯、机织地毯、簇绒地毯、方块地毯、印花地毯、天然材料地毯、地垫 (浴室垫、门垫)、无纺布生产机械设计、软件清洁维护设备等</span></p></li><li><p><strong><span>铺装及保养产品:</span></strong><span> 瓷砖倒角/倒边/磨边/锯片设备、墙地砖铺贴机器人、干挂五金件、水泥自流平、隔声减振垫、PVC地材焊接设备、安装/切割/手持工具、清洗维护工具设备、踢脚线、木线条、地板锁扣、地板展示架、地板检测与认证、蜡、清洁化学剂、激光切割等</span></p></li><li><p><strong><span>地面墙面设计及工艺:</span></strong><span> 设计软件、花样授权、数码印花、室内设计、培训服务等</span></p></li><li><p><strong><span>涂料缝剂:</span></strong><span> 艺术涂料、硅藻泥、灰泥、仿石材粉末涂料、幻彩粉末涂料、真石漆、多彩漆、金属漆、瓷砖胶粘剂、填缝剂、美缝剂、地板胶等</span></p></li><li><p><strong><span>创新建筑装饰材料:</span></strong><span> 金属织物、竹钢、竹木、混凝土UHPC、纤维水泥板、夯土、聚碳酸酯板、PVC墙膜、冰火板、雪岩板、树脂玻璃、印刷/彩釉玻璃、玻璃砖、艺术波纹板、艺术玻璃、夹层玻璃、亚克力/树脂、生态砖、石膏（GRG、饰面板/线条/玻璃纤维石膏板）、PC砖、植草砖/格、微水泥、云石、水泥艺术砖、水泥仿石等</span></p></li><li><p><strong><span>新型墙体装饰材料:</span></strong><span> 金属饰板（铜、钛锌、铝合金装饰板、镀铝锌钢板、铝塑、铝蜂窝板、铜塑板、彩涂板、印花金属装饰板等)；陶土板、陶瓷挂板、外墙装饰板、木塑外墙挂板、砂岩外墙、GRC/玻璃纤维增强混凝土、装饰一体化保温板；柔性饰面砖、无石棉硅酸钙板、纤维水泥板、矿棉吸音板、纸面石膏板、玻镁板、轻质隔墙条板、金属面夹芯板等</span></p></li><li><p><strong><span>新型绿色建材:</span></strong><span> 竹/金属饰面板、防火复合板、保温装饰一体板、透水砖、铝塑复合板、太阳能BIPV，光伏、法拉利膜、印刷合金板、蜂窝复合板、不锈钢、雕花铝板、金属瓦等</span></p></li><li><p><strong><span>园林景观材料:</span></strong><span> 防腐木、木塑复合材料、彩砖、压膜地面、园林砖瓦、广场砖、围栏、屏幕和防风林、园林雕塑、城市雕塑、石材、景观水处理技术及设备、水景喷泉设施及系统等</span></p></li></ol><hr /><p><a href='index.html'><span>东南亚出差计划</span></a></p></div></div>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2024上半年东南亚及国内展会">2024上半年东南亚及国内展会</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#国际展会">国际展会</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bex-asia">BEX Asia</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间">时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主办方">主办方</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#展览范围">展览范围</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#architecture--building">Architecture &amp; Building</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间-2">时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点-2">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主办方-2">主办方</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#展品范围">展品范围</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#国内展会">国内展会</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#surfaces-china">SURFACES China</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间-3">时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点-3">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主办方-3">主办方</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#展览范围-2">展览范围</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><p>&nbsp;</p><h1 id='2024上半年东南亚及国内展会'><a href='2024aExhibition.html'><span>2024上半年东南亚及国内展会</span></a></h1><h1 id='国际展会'><span>国际展会</span></h1><h2 id='bex-asia'><a href='https://www.bex-asia.com/'><span>BEX Asia</span></a><img src="images/BEX Asia-logo.jpg" style="zoom: 33%;" /></h2><h3 id='时间'><span>时间</span></h3><p><span>2024年9月4日~2024年9月6日 09:00~18:00</span></p><h3 id='地点'><span>地点</span></h3><p><span>Marina Bay Sands, 10 Bayfront Ave, Singapore 018956</span></p><h3 id='主办方'><span>主办方</span></h3><p><span>Reed Exhibitions励展集团</span></p><h3 id='展览范围'><span>展览范围</span></h3><ol start='' ><li><p><strong><span>装饰装修区:</span></strong><span> 建筑五金、厨房卫浴、新型建材、建筑不锈钢、建筑金属材料、建筑陶瓷、建筑石材、建筑机械设备、室内装饰材料、木材、建筑胶凝制品、塑胶建材、粘合剂、纸质材料、天花板、</span><strong><span>木地板</span></strong><span>、砖瓦、门窗玻璃、天花板墙面装饰、隔间、厨房卫浴配件及相关材料</span></p></li><li><p><strong><span>建材料区:</span></strong><span> 屋顶、建筑结构、防水处理、能源环保技术、水处理技术、管件、泵阀、防水材料、维修设备及清洁用品、保安及防护设备、消防安防器材</span></p></li><li><p><strong><span>室内装潢及配件区:</span></strong><span> 室内设计、家具家饰等</span></p></li></ol><hr /><h2 id='architecture--building'><a href='https://architecturebuildingservices.com.sg/'><span>Architecture &amp; Building</span></a><img src="images/ABS-Logo.png" style="zoom: 18%;" /></h2><h3 id='时间-2'><span>时间</span></h3><p><span>2024年11月13日~11月15日 10:00~18:00(11月15日 17:00)</span></p><h3 id='地点-2'><span>地点</span></h3><p><span>Marina Bay Sands, 10 Bayfront Ave, Singapore 018956</span></p><h3 id='主办方-2'><span>主办方</span></h3><p><span>CEMS</span></p><h3 id='展品范围'><span>展品范围</span></h3><ol start='' ><li><p><strong><span>建材:</span></strong><span> 卫浴洁具、门窗及配件、门窗机电及门控系统、橱柜、厨卫设施、石材、钢材、铝材、不锈钢、塑料建材、复合材料、新型建材、防水建材、保温建材、建筑玻璃、地面铺装材料、地板、地毯、人造草坪、其它金属材料、五金配件、建筑工具、劳保用品、安全防护用具、蓬房、帐篷、篷布、阳光房、装饰材料、塑胶橡胶、墙纸布艺、家居软装。</span></p></li><li><p><strong><span>建筑材料及金属:</span></strong><span> 建筑五金、建筑工具、不锈钢材、彩钢板、建筑金属材料、建筑防水材料、仓储设备、铝塑板、铝型材、阳光板、板材、木材、建筑胶凝制品、粘合剂、门窗、五金、锁具、墙体材料、室内装饰材料、地板、砖瓦、建筑机械设备等；建筑陶瓷：各类瓷砖、瓷片、软瓷、马赛克、陶板、陶砖、陶瓷瓦、工业陶瓷、特种陶瓷。</span></p></li><li><p><strong><span>木材及木制品、复合板材:</span></strong><span> 木材、木制品、竹制品、人造板材、建筑木模板；</span><strong><span>实木地板</span></strong><span>、竹地板、</span><strong><span>复合地板</span></strong><span>、</span><strong><span>强化地板</span></strong><span>、防静电地板；复合木材、</span><strong><span>木塑材料</span></strong><span>、防火板、</span><strong><span>PVC复合材料</span></strong><span>、抗贝特板、亚克力板、树脂板、装饰纸。</span></p></li><li><p><strong><span>五金:</span></strong><span> 手动工具: 传统手工具、组合工具、汽保工具、园林工具、工具箱包、量具、刃具、刀具； 电动工具: 传统电动工具、气动工具、风动工具、液压工具、磨具磨料； 机械设备: 木工机械、园林机械、清洗机械、包装机械、金属加工机械、起重器材、喷涂设备； 焊接设备: 电焊设备与器材、气焊、气割设备、焊接辅机器具、焊接材料、配件 五金制品: 建筑五金、装饰五金、门窗五金、水暖五金、卫浴五金、标准紧固件、五金杂品 机电产品: 水泵、空压机、电动机、发电机、给排水设备、轴承</span></p></li></ol><hr /><h1 id='国内展会'><span>国内展会</span></h1><h2 id='surfaces-china'><a href='https://www.domotexasiachinafloor.com/'><span>SURFACES China</span></a><img src="images/SURFACE-logo.png" style="zoom:100%;" /></h2><h3 id='时间-3'><span>时间</span></h3><p><span>2024年08月14日~08月16日 09:00~18:00</span></p><h3 id='地点-3'><span>地点</span></h3><p><span>中国-上海-浦东新区龙阳路2345号-上海新国际博览中心</span></p><h3 id='主办方-3'><span>主办方</span></h3><p><span>Informa Markets、中国五矿化工进出口商会</span></p><h3 id='展览范围-2'><span>展览范围</span></h3><ol start='' ><li><p><strong><span>瓷砖:</span></strong><span> 岩板，瓷砖、装饰瓷砖、地砖、玻璃瓷砖、陶瓷大板、大理石瓷砖、瓷砖封边型材、马赛克、陶瓷砖、石砖、陶瓦瓷砖、墙砖、操作台面、仿古砖等</span></p></li><li><p><strong><span>石材:</span></strong><span> 荒料、板岩、工程石、花岗岩、景观石、石灰石、大理石、石材封边型材、马赛克、天然石、玛瑙石、石英石、砂岩等</span></p></li><li><p><strong><span>磨石及人造石:</span></strong><span> 水泥基磨石、环氧磨石、玻璃磨石，人造石实体面材、人造石石英石、人造石岗石等</span></p></li><li><p><strong><span>地板成品及生产设备、技术:</span></strong><span> 实木地板、</span><strong><span>实木复合地板</span></strong><span>、</span><strong><span>强化木地板</span></strong><span>、重竹地板、竹复合地板、软木地板、地热地板、地板生产设备、生产配件、技术</span></p></li><li><p><strong><span>弹性地材:</span></strong><span> </span><strong><span>PVC地板</span></strong><span>、</span><strong><span>木塑地板</span></strong><span>、</span><strong><span>SPC地板</span></strong><span>、亚麻地板、橡胶地板、防静电地板、人造草坪等</span></p></li><li><p><strong><span>运动地材:</span></strong><span> 人造草、体育橡胶地材、体育PVC地板、体育木地板、橡胶跑道等</span></p></li><li><p><strong><span>集成墙面及墙面装饰材料:</span></strong><span> 墙纸、墙布、集成墙饰、集成墙面、背景墙、吸音板、涂料、墙漆、硅藻泥产品、龙骨、板材、木门、墙体材料</span></p></li><li><p><strong><span>顶墙及天花:</span></strong><span> 集成吊顶、全屋集成系统、天花（矿棉板、石膏板、木板、塑钢板、铝扣板）、吊顶材料等</span></p></li><li><p><strong><span>卫浴洁具及整体卫浴:</span></strong><span> 整体卫浴及解决方案、卫浴洁具、淋浴房等</span></p></li><li><p><strong><span>地毯:</span></strong><span> 手工地毯、机织地毯、簇绒地毯、方块地毯、印花地毯、天然材料地毯、地垫 (浴室垫、门垫)、无纺布生产机械设计、软件清洁维护设备等</span></p></li><li><p><strong><span>铺装及保养产品:</span></strong><span> 瓷砖倒角/倒边/磨边/锯片设备、墙地砖铺贴机器人、干挂五金件、水泥自流平、隔声减振垫、PVC地材焊接设备、安装/切割/手持工具、清洗维护工具设备、踢脚线、木线条、地板锁扣、地板展示架、地板检测与认证、蜡、清洁化学剂、激光切割等</span></p></li><li><p><strong><span>地面墙面设计及工艺:</span></strong><span> 设计软件、花样授权、数码印花、室内设计、培训服务等</span></p></li><li><p><strong><span>涂料缝剂:</span></strong><span> 艺术涂料、硅藻泥、灰泥、仿石材粉末涂料、幻彩粉末涂料、真石漆、多彩漆、金属漆、瓷砖胶粘剂、填缝剂、美缝剂、地板胶等</span></p></li><li><p><strong><span>创新建筑装饰材料:</span></strong><span> 金属织物、竹钢、竹木、混凝土UHPC、纤维水泥板、夯土、聚碳酸酯板、PVC墙膜、冰火板、雪岩板、树脂玻璃、印刷/彩釉玻璃、玻璃砖、艺术波纹板、艺术玻璃、夹层玻璃、亚克力/树脂、生态砖、石膏（GRG、饰面板/线条/玻璃纤维石膏板）、PC砖、植草砖/格、微水泥、云石、水泥艺术砖、水泥仿石等</span></p></li><li><p><strong><span>新型墙体装饰材料:</span></strong><span> 金属饰板（铜、钛锌、铝合金装饰板、镀铝锌钢板、铝塑、铝蜂窝板、铜塑板、彩涂板、印花金属装饰板等)；陶土板、陶瓷挂板、外墙装饰板、木塑外墙挂板、砂岩外墙、GRC/玻璃纤维增强混凝土、装饰一体化保温板；柔性饰面砖、无石棉硅酸钙板、纤维水泥板、矿棉吸音板、纸面石膏板、玻镁板、轻质隔墙条板、金属面夹芯板等</span></p></li><li><p><strong><span>新型绿色建材:</span></strong><span> 竹/金属饰面板、防火复合板、保温装饰一体板、透水砖、铝塑复合板、太阳能BIPV，光伏、法拉利膜、印刷合金板、蜂窝复合板、不锈钢、雕花铝板、金属瓦等</span></p></li><li><p><strong><span>园林景观材料:</span></strong><span> 防腐木、木塑复合材料、彩砖、压膜地面、园林砖瓦、广场砖、围栏、屏幕和防风林、园林雕塑、城市雕塑、石材、景观水处理技术及设备、水景喷泉设施及系统等</span></p></li></ol><hr /><p><a href='index.html'><span>东南亚出差计划</span></a></p></div></div>
 
 <script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
 </html>
